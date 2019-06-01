@@ -1,8 +1,10 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='projects_clean.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='logo.css') }}">
 </head>
 <body>
+<div><image src="{{url_for('static', filename = 'staffbot_logo.png')}}" alt = "centered image" width="200px" id="logo"></image></body></div>
 <h2> Project requests </h2>
 <table>
 <thead>
@@ -34,7 +36,7 @@
       <td>{{office_preference[i]}} </td>
       <td>{{start_date[i]}}</td>
       <td>{{duration[i]}}</td>
-      <td><a href="/download_proposal_pdf/{{partner_name[i]}}"><image src="{{url_for('static', filename = 'download_pdf.jpg')}}" height=30></image></a></td>
+      <td><a href="/download_proposal_pdf/{{project_name[i]}}.pdf"><image src="{{url_for('static', filename = 'download_pdf.jpg')}}" height=30></image></a></td>
       <td><a href="
 mailto:{{contact_email[i]}}
 ?cc=sarah@oliverwyman.com

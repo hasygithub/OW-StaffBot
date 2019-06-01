@@ -40,8 +40,8 @@ def match_and_email(test_email):
             server.login('staff.bot.ow@gmail.com', 'Pyspark4lyfe22')
             server.sendmail('Project Radar', [test_email,consultant_email], "Hi " + consultant_name + ",\n" \
             "It's a match for " + partner_name + " and " + consultant_name + " for " + project + "." \
-            + " Please use this email chain as a form of communication and visit XX for further information." \
-            + "\n" + "From,\n" + "Staffbot")
+            + " Please use this email chain as a form of communication and visit the StaffBot website for further information." \
+            + "\n" + "From,\n" + "StaffBot")
             server.quit()
 
             # partner email
@@ -56,7 +56,8 @@ def match_and_email(test_email):
             server.login('staff.bot.ow@gmail.com', 'Pyspark4lyfe22')
             server.sendmail('Project Radar', [test_email,partner_email], "Hi " + partner_name + ",\n" \
             "It's a match for " + partner_name + " and " + consultant_name + " for " + project + "." \
-            + " Please use this email chain as a form of communication and visit XX for further information")
+            + " Please use this email chain as a form of communication and visit the StaffBot website for further information." \
+            + "\n" + "From,\n" + "StaffBot")
             server.quit()
 
 

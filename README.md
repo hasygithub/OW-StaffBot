@@ -4,7 +4,7 @@ Staffing just got easier!
 
 # Quick Information #
 
-- [Informational slide deck](http://ec2-52-14-247-241.us-east-2.compute.amazonaws.com:5000/info.pdf)
+- [Informational slide deck](info.pdf)
 - [Live portal](http://ec2-52-14-247-241.us-east-2.compute.amazonaws.com:5000/)
 
 # Features #

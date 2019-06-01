@@ -99,7 +99,7 @@ def handle_data():
         flash('No selected file')
         return redirect(request.url)
     if file and allowed_file(file.filename):
-        filename = secure_filename(project_name+'_proposal.pdf')
+        filename = secure_filename(project_name+'.pdf')
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         #return redirect(url_for('uploaded_file', filename=filename))
 
@@ -147,7 +147,7 @@ def handle_data_resources():
         flash('No selected file')
         return redirect(request.url)
     if file and allowed_file(file.filename):
-        filename = secure_filename(consultant_name+'_resume.pdf')
+        filename = secure_filename(consultant_name+'.pdf')
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         #return redirect(url_for('uploaded_file', filename=filename))
 

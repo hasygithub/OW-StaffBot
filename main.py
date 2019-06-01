@@ -1,4 +1,10 @@
 from flask import Flask
+from flask import make_response
+from flask import Response
+from flask import send_file
+
+from reportlab.pdfgen import canvas
+
 import pandas as pd
 
 from csv_functions import add_row_to_projects
@@ -98,5 +104,11 @@ def template_test(name=None):
 @app.route('/send_email/')
 def send_email(name=None):
     return render_template('send_email.html', name=name)
+
+@app.route('/download_pdf')
+def downloadFile():
+    path = "templates/20190414_2302_0_1_neural_net_iterations.pdf"
+    return send_file(path, as_attachment=True)
+
 
 

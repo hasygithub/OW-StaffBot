@@ -1,26 +1,32 @@
 import pandas as pd
 
-def add_row_to_projects(partner_name,
-                        practice,
-                        level_required,
-                        office_preference,
+def add_row_to_projects(client,
+                        project_name,
+                        vert_horiz,
+                        partner_name,
                         type_of_work_1,
                         type_of_work_2,
+                        level_required,
+                        office_preference,
                         start_date,
                         duration,
-                        attachment):
+                        attachment,
+                        contact_email):
 
     df = pd.read_csv('projects.csv')
 
-    row = [partner_name,
-           practice,
-           level_required,
-           office_preference,
-           type_of_work_1,
-           type_of_work_2,
-           start_date,
-           duration,
-           attachment]
+    row = [client,
+                        project_name,
+                        vert_horiz,
+                        partner_name,
+                        type_of_work_1,
+                        type_of_work_2,
+                        level_required,
+                        office_preference,
+                        start_date,
+                        duration,
+                        attachment,
+                        contact_email]
 
     df_row = pd.DataFrame(data=[row], columns=df.columns)
     df_complete = df.append(df_row)
@@ -43,8 +49,7 @@ def add_row_to_resources(consultant_name,
     df = pd.read_csv('resources.csv')
 
     row = [consultant_name,
-                         vertical,
-                         horizontal,
+                         '{}-{}'.format(vertical, horizontal),
                          interest_1,
                          interest_2,
                          level,

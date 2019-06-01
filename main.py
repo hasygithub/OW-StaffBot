@@ -136,7 +136,7 @@ def projects_clean():
                            partner_name=list(df['partner_name']),
                            type_of_work_1=list(df['type_of_work_1']),
                            type_of_work_2=list(df['type_of_work_2']),
-                           level=list(df['level']),
+                           level_required=list(df['level_required']),
                            office_preference=list(df['office_preference']),
                            start_date=list(df['start_date']),
                            duration=list(df['duration']),

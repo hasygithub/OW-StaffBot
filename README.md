@@ -5,7 +5,7 @@ Staffing just got easier!
 # Quick Information #
 
 - [Informational slide deck](info.pdf)
-- [Live portal](http://ec2-52-14-247-241.us-east-2.compute.amazonaws.com:5000/)
+- [Live portal](http://ec2-52-14-247-241.us-east-2.compute.amazonaws.com:5000/) Note that this is using AWS EC2 free tier, which is very unresponsive at times. Please be patient.  
 
 # Features #
 

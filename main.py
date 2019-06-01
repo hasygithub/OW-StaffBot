@@ -93,7 +93,7 @@ def handle_data():
         flash('No selected file')
         return redirect(request.url)
     if file and allowed_file(file.filename):
-        filename = secure_filename(requester_name+'.pdf')
+        filename = secure_filename(requester_name+'_proposal.pdf')
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         #return redirect(url_for('uploaded_file', filename=filename))
 
@@ -106,17 +106,31 @@ def handle_data():
 
 @app.route('/handle_data_resources', methods=['POST'])
 def handle_data_resources():
+
     consultant_name = request.form['consultant_name']
     vertical = request.form['vertical']
     horizontal = request.form['horizontal']
-
     level = request.form['level']
     office = request.form['office']
     interest_1 = request.form['interest_1']
     interest_2 = request.form['interest_2']
-
     start_date = request.form['start_date']
     TM = request.form['TM']
+
+    # check if the post request has the file part
+    if 'file' not in request.files:
+        flash('No file part')
+        return redirect(request.url)
+    file = request.files['file']
+    # if user does not select file, browser also
+    # submit a empty part without filename
+    if file.filename == '':
+        flash('No selected file')
+        return redirect(request.url)
+    if file and allowed_file(file.filename):
+        filename = secure_filename(consultant_name+'_resume.pdf')
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        #return redirect(url_for('uploaded_file', filename=filename))
 
     add_row_to_resources(consultant_name, vertical, horizontal, interest_1, interest_2, level, office, start_date, '', '', '', TM)
 
@@ -175,9 +189,14 @@ def template_test(name=None):
 def send_email(name=None):
     return render_template('send_email.html', name=name)
 
-@app.route('/download_pdf/<partner_name>')
+@app.route('/download_proposal_pdf/<partner_name>')
 def downloadFile(partner_name=None):
-    path = "files/{partner_name}.pdf".format(partner_name=partner_name)
+    path = "files/{partner_name}_proposal.pdf".format(partner_name=partner_name)
+    return send_file(path, as_attachment=True)
+
+@app.route('/download_resume_pdf/<consultant_name>')
+def downloadFile(consultant_name=None):
+    path = "files/{consultant_name}_resume.pdf".format(consultant_name=consultant_name)
     return send_file(path, as_attachment=True)
 
 def allowed_file(filename):

@@ -13,9 +13,15 @@
       <div class="row" style="margin-top:20px">
           <div class="col-md-12">
               <form role="form" action="{{ url_for('handle_data_resources') }}" method="POST" enctype=multipart/form-data>
+
                   <div class="form-group">
                       <label for="title">Consultant name</label>
                       <input class="form-control" name="consultant_name" placeholder="Consultant Name">
+                  </div>
+
+                  <div class="form-group">
+                      <label for="title">Consultant email</label>
+                      <input class="form-control" name="consultant_email" placeholder="Consultant Email">
                   </div>
 
                   <div class="form-group">
@@ -91,8 +97,8 @@
                       <label for="duration">TM</label>
                       <select class="form-control" name="TM">
                           <option value="1">Choose your TM</option>
-                          <option value="Sarah Raymond">Sarah Raymond</option>
-                          <option value="Jamie Rockmore">Jamie Rockmore</option>
+                          <option value="sarah.raymondo@oliverwyman.com">Sarah Raymond</option>
+                          <option value="jamie.rockmoreo@oliverwyman.com">Jamie Rockmore</option>
                       </select>
                   </div>
 

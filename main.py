@@ -1,4 +1,6 @@
 from flask import Flask
+from flask import send_file
+
 import pandas as pd
 from csv_functions import add_row_to_projects
 from match import match_and_email
@@ -102,5 +104,11 @@ def template_test(name=None):
 @app.route('/send_email/')
 def send_email(name=None):
     return render_template('send_email.html', name=name)
+
+@app.route('/download_pdf')
+def downloadFile():
+    path = "templates/20190414_2302_0_1_neural_net_iterations.pdf"
+    return send_file(path, as_attachment=True)
+
 
 

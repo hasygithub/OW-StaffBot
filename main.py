@@ -69,7 +69,7 @@ def auto_email():
     test_email = request.form['test_email']
     match_and_email(test_email)
 
-    return 'StaffBot has matched projects to consultants. Emails confirming these matches have been sent to the partner and consultant\'s respective emails.'
+    return render_template('test_email_final.html')
 
 @app.route('/resource_form')
 def resource_form():

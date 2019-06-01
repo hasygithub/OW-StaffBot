@@ -1,35 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<style>
-#button1{
-width: 300px;
-height: 40px;
-
-}
-#button2{
-width: 300px;
-height: 40px;
-}
-</style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main_page.css') }}">
 
     <head>
         <title>StaffBot</title>
     </head>
-    <body>
+    <body class="center">
     <!--<div><image src="http://www.ultimatecomputerclassses.com/assets/images/microsoft_powerpoint_2013_logosvg.png" width="300px"></image></div>-->
-    <div class="col-md-4 col-lg-offset-4">
-        <image src="{{url_for('static', filename = 'staffbot_logo.png')}}" alt = "centered image" width="300px"></image></div>
+    <div>
+        <image src="{{url_for('static', filename = 'staffbot_logo.png')}}" class="center"></image></div>
 
-        <h1>Here are the options:</h1>
-        <ul>
-          <li><a href="/projects_clean">Projects Board</a></li>
-          <li><a href="/resources/">Resource Board</a></li>
-          <li><a href="/request_form/">Project Form</a></li>
-        </ul>
+    <button class="button"><a href="/projects_clean" type="button projects-button" id="button1" >Projects Board</a></button>
+    <button class="button"><a href="/resources/"type="button resources-button" id="button2">Project Form</a></button>
+    <button class="button"><a href="/resources/"type="button resources-button" id="button3">Resource Board</a></button>
+    <button class="button"><a href="/resources/"type="button resources-button" id="button4">Resource Form</a></button>
+    <button class="button"><a href="/auto_email"type="button resources-button" id="button5">Run Matches</a></button>
 
-        <button type="button home-button" id="button1" >Home</button>
-        <button type="button contact-button" id="button2">Contact Us</button>
 
     </body>
 </html>

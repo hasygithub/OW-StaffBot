@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return 'Hello, World!'
+    return render_template('templates/main_page.html')
 
 @app.route('/projects/')
 def projects():

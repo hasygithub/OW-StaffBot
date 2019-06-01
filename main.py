@@ -59,9 +59,15 @@ def input_test():
 def request_form():
     return render_template('request_form.html')
 
-@app.route('/auto_email')
+@app.route('/test_email')
+def test_email():
+    return render_template('test_email.html')
+
+@app.route('/auto_email', methods=['POST'])
 def auto_email():
-    match_and_email()
+
+    test_email = request.form['test_email']
+    match_and_email(test_email)
 
     return 'Email sent!'
 

@@ -17,8 +17,8 @@ def match_and_email():
             #TODO Change these back to the emails
             # partner_email = cross_join.loc[i, 'partner_name']
             # consultant_email = cross_join.loc[i, 'consultant_name']
-            partner_email = 'amyryush1115@gmail.com'
-            consultant_email = 'amy.ryu@oliverwyman.com'
+            partner_email = 'kei.nishimuragasparian@gmail.com'
+            consultant_email = 'kei.nishimura-gasparian@oliverwyman.com'
             partner_name = cross_join.loc[i, 'partner_name']
             consultant_name = cross_join.loc[i, 'consultant_name']
 
@@ -29,7 +29,7 @@ def match_and_email():
             # consultant email
             msg = MIMEMultipart('alternative')
             msg['Subject'] = 'Project Radar'
-            msg['From'] = 'Staff.Bot@gmail.com'
+            msg['From'] = 'staff.bot.ow@gmail.com'
             msg['To'] = consultant_email
 
             server = smtplib.SMTP('smtp.gmail.com:587')
@@ -37,16 +37,17 @@ def match_and_email():
             server.ehlo()
             #TODO make a better email address
             #TODO host server
-            server.login('StaffBotforOW@gmail.com', 'Staffbot123')
+            server.login('staff.bot.ow@gmail.com', 'Pyspark4lyfe22')
             server.sendmail('Project Radar', consultant_email, "Hi " + consultant_name + ",\n" \
             "It's a match for " + partner_name + " and " + consultant_name + " for " + project + "." \
-            + " Please use this email chain as a form of communication and visit XX for further information")
+            + " Please use this email chain as a form of communication and visit XX for further information." \
+            + "\n" + "From,\n" + "Staffbot")
             server.quit()
 
             # partner email
             msg = MIMEMultipart('alternative')
             msg['Subject'] = 'Staffing Radar'
-            msg['From'] = 'Staff.Bot@gmail.com'
+            msg['From'] = 'staff.bot.ow@gmail.com'
             msg['To'] = partner_email
 
             server = smtplib.SMTP('smtp.gmail.com:587')
@@ -54,7 +55,7 @@ def match_and_email():
             server.ehlo()
             #TODO make a better email address
             #TODO host server
-            server.login('StaffBotforOW@gmail.com', 'Staffbot123')
+            server.login('staff.bot.ow@gmail.com', 'Pyspark4lyfe22')
             server.sendmail('Project Radar', partner_email, "Hi " + partner_name + ",\n" \
             "It's a match for " + partner_name + " and " + consultant_name + " for " + project + "." \
             + " Please use this email chain as a form of communication and visit XX for further information")

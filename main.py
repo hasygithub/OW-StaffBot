@@ -3,7 +3,7 @@ from flask import send_file
 
 import pandas as pd
 
-from csv_functions import add_row_to_projects
+from csv_functions import add_row_to_projects, add_row_to_resources
 
 from flask import render_template, request
 
@@ -53,6 +53,10 @@ def input_test():
 def request_form():
     return render_template('request_form.html')
 
+@app.route('/resource_form')
+def resource_form():
+    return render_template('resource_form.html')
+
 @app.route('/handle_data', methods=['POST'])
 def handle_data():
     requester_name = request.form['requester_name']
@@ -74,6 +78,27 @@ def handle_data():
     # return a response
 
 
+@app.route('/handle_data_resources', methods=['POST'])
+def handle_data_resources():
+    consultant_name = request.form['consultant_name']
+    vertical = request.form['vertical']
+    horizontal = request.form['horizontal']
+
+    level = request.form['level']
+    office = request.form['office']
+    interest_1 = request.form['interest_1']
+    interest_2 = request.form['interest_2']
+
+    start_date = request.form['start_date']
+    TM = request.form['TM']
+
+    add_row_to_resources(consultant_name, vertical, horizontal, interest_1, interest_2, level, office, start_date, '', '', '', TM)
+
+    return 'resource submitted :D'
+    # your code
+    # return a response
+
+
 @app.route('/projects_clean')
 def projects_clean():
     df = pd.read_csv('projects.csv')
@@ -90,6 +115,26 @@ def projects_clean():
                            attachment=list(df['attachment'])
                            )
 
+
+
+@app.route('/resources_clean')
+def resources_clean():
+    df = pd.read_csv('resources.csv')
+    return render_template('resources_clean.html',
+                           num=len(list(df['consultant_name'])),
+                           consultant_name=list(df['consultant_name']),
+                           vertical=list(df['vertical']),
+                           horizontal=list(df['horizontal']),
+                           interest_1=list(df['interest_1']),
+                           interest_2=list(df['interest_2']),
+                           level=list(df['level']),
+                           office=list(df['office']),
+                           start_date=list(df['start_date']),
+                           attachments=list(df['attachments']),
+                           email_link=list(df['email_link']),
+                           contact_email=list(df['contact_email']),
+                           tm_email=list(df['tm_email']),
+                           )
 
 
 @app.route('/hello/')

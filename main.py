@@ -35,7 +35,7 @@ def auto_email():
     test_email = request.form['test_email']
     match_and_email(test_email)
 
-    return 'Email sent!'
+    return render_template('test_email_final.html')
 
 @app.route('/resource_form')
 def resource_form():

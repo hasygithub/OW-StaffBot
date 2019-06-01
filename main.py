@@ -216,7 +216,7 @@ def downloadproposalFile(partner_name=None):
 
 @app.route('/download_resume_pdf/<consultant_name>')
 def downloadresumeFile(consultant_name=None):
-    path = "files/{consultant_name}_resume.pdf".format(consultant_name=consultant_name)
+    path = "files/{consultant_name}".format(consultant_name=consultant_name)
     return send_file(path, as_attachment=True)
 
 def allowed_file(filename):

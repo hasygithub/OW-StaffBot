@@ -28,7 +28,7 @@ def projects():
                            partner_name=list(df['partner_name']),
                            type_of_work_1=list(df['type_of_work_1']),
                            type_of_work_2=list(df['type_of_work_2']),
-                           level=list(df['level']),
+                           level=list(df['level_required']),
                            office_preference=list(df['office_preference']),
                            start_date=list(df['start_date']),
                            duration=list(df['duration']),
@@ -72,15 +72,21 @@ def resource_form():
 @app.route('/handle_data', methods=['POST'])
 def handle_data():
 
-    requester_name = request.form['requester_name']
+    print ('test')
+
+    client = request.form['client']
+    project_name = request.form['project_name']
     vertical = request.form['vertical']
     horizontal = request.form['horizontal']
-    level = request.form['level']
-    office = request.form['office']
-    interest_1 = request.form['interest_1']
-    interest_2 = request.form['interest_2']
+    partner_name = request.form['partner_name']
+    type_of_work_1 = request.form['interest_1']
+    type_of_work_2 = request.form['interest_2']
+    level_required = request.form['level']
+    office_preference = request.form['office']
     start_date = request.form['start_date']
     duration = request.form['duration']
+    attachment = ''
+    contact_email = request.form['contact_email']
 
     # check if the post request has the file part
     if 'file' not in request.files:
@@ -93,11 +99,22 @@ def handle_data():
         flash('No selected file')
         return redirect(request.url)
     if file and allowed_file(file.filename):
-        filename = secure_filename(requester_name+'_proposal.pdf')
+        filename = secure_filename(project_name+'_proposal.pdf')
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         #return redirect(url_for('uploaded_file', filename=filename))
 
-    add_row_to_projects(requester_name, '{}-{}'.format(vertical, horizontal), level, office, interest_1, interest_2, start_date, duration, '')
+    add_row_to_projects(client,
+                        project_name,
+                        '{}-{}'.format(vertical, horizontal),
+                        partner_name,
+                        type_of_work_1,
+                        type_of_work_2,
+                        level_required,
+                        office_preference,
+                        start_date,
+                        duration,
+                        attachment,
+                        contact_email)
 
     return 'project submitted :D'
     # your code

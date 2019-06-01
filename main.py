@@ -89,19 +89,17 @@ def handle_data():
     contact_email = request.form['contact_email']
 
     # check if the post request has the file part
-    if 'file' not in request.files:
-        flash('No file part')
-        return redirect(request.url)
-    file = request.files['file']
-    # if user does not select file, browser also
-    # submit a empty part without filename
-    if file.filename == '':
-        flash('No selected file')
-        return redirect(request.url)
-    if file and allowed_file(file.filename):
-        filename = secure_filename(project_name+'.pdf')
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        #return redirect(url_for('uploaded_file', filename=filename))
+    if 'file' in request.files:
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit a empty part without filename
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(project_name+'.pdf')
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            #return redirect(url_for('uploaded_file', filename=filename))
 
     add_row_to_projects(client,
                         project_name,
@@ -137,19 +135,20 @@ def handle_data_resources():
     TM = request.form['TM']
 
     # check if the post request has the file part
-    if 'file' not in request.files:
-        flash('No file part')
-        return redirect(request.url)
-    file = request.files['file']
-    # if user does not select file, browser also
-    # submit a empty part without filename
-    if file.filename == '':
-        flash('No selected file')
-        return redirect(request.url)
-    if file and allowed_file(file.filename):
-        filename = secure_filename(consultant_name+'.pdf')
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        #return redirect(url_for('uploaded_file', filename=filename))
+    #if 'file' not in request.files:
+        #flash('No file part')
+        #return redirect(request.url)
+    if 'file' in request.files:
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit a empty part without filename
+        if file.filename == '':
+            flash('No selected file')
+            #return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(consultant_name+'.pdf')
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            #return redirect(url_for('uploaded_file', filename=filename))
 
     add_row_to_resources(consultant_name, vertical, horizontal, interest_1, interest_2, level, office, start_date, '', '', consultant_email, TM)
 
@@ -229,13 +228,13 @@ def upload_file(name=None):
         # check if the post request has the file part
         if 'file' not in request.files:
             flash('No file part')
-            return redirect(request.url)
+            #return redirect(request.url)
         file = request.files['file']
         # if user does not select file, browser also
         # submit a empty part without filename
         if file.filename == '':
             flash('No selected file')
-            return redirect(request.url)
+            #return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))

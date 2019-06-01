@@ -5,17 +5,18 @@
 <body>
 <h2> Project requests </h2>
 <table>
-  <thead>
+<thead>
     <tr>
       <th>Client</th>
       <th>Project Name</th>
-      <th>Practice</th>
+      <th>Vertical/Horizontal</th>
+      <th>Partner Name</th>
+      <th>Type of Work </th>
       <th>Level Required</th>
       <th>Office Preference</th>
-      <th>Type of Work</th>
       <th>Start Date</th>
       <th>Duration</th>
-      <th>Description</th>
+      <th>Proposal</th>
       <th>Email</th>
     </tr>
   </thead>
@@ -24,25 +25,26 @@
     {%for i in range(0, num)%}
 
     <tr>
-      <td><strong>{{partner_name[i]}}</strong></td>
-      <td>{{practice[i]}}</td>
-      <td>Digital</td>
+      <td><strong>{{client[i]}}</strong></td>
+      <td>{{project_name[i]}}</td>
+      <td>{{vert_horiz[i]}}</td>
+      <td>{{partner_name[i]}}</td>
+      <td>{{type_of_work_1[i]}} | {{type_of_work_2[i]}}</td>
       <td>{{level_required[i]}}</td>
       <td>{{office_preference[i]}} </td>
-      <td>{{type_of_work_1[i]}} | {{type_of_work_2[i]}}</td>
       <td>{{start_date[i]}}</td>
       <td>{{duration[i]}}</td>
-      <td><a href="/download_pdf"><image src="http://www.ultimatecomputerclassses.com/assets/images/microsoft_powerpoint_2013_logosvg.png" height=20></image></a></td>
+      <td><a href="/download_proposal_pdf/{{partner_name[i]}}"><image src="{{url_for('static', filename = 'download_pdf.jpg')}}" height=30></image></a></td>
       <td><a href="
-mailto:{{partner_name[i]}}@oliverwyman.com
+mailto:{{contact_email[i]}}
 ?cc=sarah@oliverwyman.com
-&subject=Interest in {{practice[i]}} project for {{level_required[i]}} role starting {{start_date[i]}} for {{duration[i]}}
+&subject=Interest in {{vert_horiz[i]}} project for {{level_required[i]}} role starting {{start_date[i]}} for {{duration[i]}}
 &body=
 Hi {{partner_name[i]}}, %0A
 %0A
 My name is consultant_name and I am a consultant_practice consultant_level in the office_name office. %0A
 %0A
-I read about the {{practice[i]}} project via the staffing portal and wanted to reach out to express my interest and to learn more. %0A
+I read about the {{vert_horiz[i]}} project via the staffing portal and wanted to reach out to express my interest and to learn more. %0A
 %0A
 Would you be available sometime this week or next to chat further? If so, I will sent up some time on our calendars that works for both of us. %0A
 %0A

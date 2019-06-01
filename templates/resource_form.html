@@ -6,14 +6,14 @@
 <body>
   <div class="container">
       <div class="row">
-          <h3 style = "color: blue">Request form</h3>
+          <h3 style = "color: blue">Resource entry form</h3>
       </div>
       <div class="row" style="margin-top:20px">
           <div class="col-md-12">
-              <form role="form" action="{{ url_for('handle_data') }}" method="POST" enctype=multipart/form-data>
+              <form role="form" action="{{ url_for('handle_data_resources') }}" method="POST" enctype=multipart/form-data>
                   <div class="form-group">
-                      <label for="title">Requester Name</label>
-                      <input class="form-control" name="requester_name" placeholder="Requester Name">
+                      <label for="title">Consultant name</label>
+                      <input class="form-control" name="consultant_name" placeholder="Consultant Name">
                   </div>
 
                   <div class="form-group">
@@ -35,7 +35,7 @@
                   </div>
 
                   <div class="form-group">
-                      <label for="level">Level Required</label>
+                      <label for="level">Level</label>
                       <select class="form-control" name="level">
                           <option value="1">Choose Level</option>
                           <option value="Consultant">Consultant</option>
@@ -45,7 +45,7 @@
                   </div>
 
                   <div class="form-group">
-                      <label for="office">Office Preference</label>
+                      <label for="office">Office</label>
                       <select class="form-control" name="office">
                           <option value="1">Choose Office</option>
                           <option value="Boston">Boston</option>
@@ -56,7 +56,7 @@
                   <hr>
 
                   <div class="form-group">
-                      <label for="interest_1">Type of Work 1</label>
+                      <label for="interest_1">Interest 1</label>
                       <select class="form-control" name="interest_1">
                           <option value="1">Choose Work Type</option>
                           <option value="CECL">CECL</option>
@@ -66,7 +66,7 @@
                   </div>
 
                   <div class="form-group">
-                      <label for="interest_2">Type of Work 2</label>
+                      <label for="interest_2">Interest 2</label>
                       <select class="form-control" name="interest_2">
                           <option value="1">Choose Work Type</option>
                           <option value="CECL">CECL</option>
@@ -86,16 +86,15 @@
                   </div>
 
                   <div class="form-group">
-                      <label for="duration">Duration</label>
-                      <select class="form-control" name="duration">
-                          <option value="1">Choose duration</option>
-                          <option value="4 weeks">4 weeks</option>
-                          <option value="6 weeks">6 weeks</option>
-                          <option value="8 weeks">8 weeks</option>
+                      <label for="duration">TM</label>
+                      <select class="form-control" name="TM">
+                          <option value="1">Choose your TM</option>
+                          <option value="Sarah Raymond">Sarah Raymond</option>
+                          <option value="Jamie Rockmore">Jamie Rockmore</option>
                       </select>
                   </div>
 
-                  <label>Upload proposal PDF file here</label>
+                  <label>Upload resume PDF file here</label>
                   <p><input type=file name=file>
 
                   <hr>

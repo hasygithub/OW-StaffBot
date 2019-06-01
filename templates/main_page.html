@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+
+<style>
+#button1{
+width: 300px;
+height: 40px;
+
+}
+#button2{
+width: 300px;
+height: 40px;
+}
+</style>
+
+    <head>
+        <title>StaffBot</title>
+    </head>
+    <body>
+    <!--<div><image src="http://www.ultimatecomputerclassses.com/assets/images/microsoft_powerpoint_2013_logosvg.png" width="300px"></image></div>-->
+    <div class="col-md-4 col-lg-offset-4">
+        <image src="{{url_for('static', filename = 'staffbot_logo.png')}}" alt = "centered image" width="300px"></image></div>
+
+        <h1>Here are the options:</h1>
+        <ul>
+          <li><a href="/projects_clean">Projects Board</a></li>
+          <li><a href="/resources/">Resource Board</a></li>
+          <li><a href="/request_form/">Project Form</a></li>
+        </ul>
+
+        <button type="button home-button" id="button1" >Home</button>
+        <button type="button contact-button" id="button2">Contact Us</button>
+
+    </body>
 </html>

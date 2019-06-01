@@ -2,13 +2,11 @@ from flask import Flask
 from flask import send_file
 
 import pandas as pd
-
 from csv_functions import add_row_to_projects
-
+from match import match_and_email
 from flask import render_template, request
 
 app = Flask(__name__)
-
 
 @app.route('/')
 def hello():
@@ -52,6 +50,12 @@ def input_test():
 @app.route('/request_form')
 def request_form():
     return render_template('request_form.html')
+
+@app.route('/auto_email')
+def auto_email():
+    match_and_email()
+
+    return 'Email sent!'
 
 @app.route('/handle_data', methods=['POST'])
 def handle_data():

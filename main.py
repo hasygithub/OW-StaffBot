@@ -1,9 +1,5 @@
 from flask import Flask
-from flask import make_response
-from flask import Response
 from flask import send_file
-
-from reportlab.pdfgen import canvas
 
 import pandas as pd
 

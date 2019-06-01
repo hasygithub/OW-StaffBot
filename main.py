@@ -190,12 +190,12 @@ def send_email(name=None):
     return render_template('send_email.html', name=name)
 
 @app.route('/download_proposal_pdf/<partner_name>')
-def downloadFile(partner_name=None):
+def downloadproposalFile(partner_name=None):
     path = "files/{partner_name}_proposal.pdf".format(partner_name=partner_name)
     return send_file(path, as_attachment=True)
 
 @app.route('/download_resume_pdf/<consultant_name>')
-def downloadFile(consultant_name=None):
+def downloadresumeFile(consultant_name=None):
     path = "files/{consultant_name}_resume.pdf".format(consultant_name=consultant_name)
     return send_file(path, as_attachment=True)
 

@@ -5,7 +5,7 @@
 </head>
 <body>
 <div><image src="{{url_for('static', filename = 'staffbot_logo.png')}}" alt = "centered image" width="200px" id="logo"></image></body></div>
-<h2> Project requests </h2>
+<h2> Project Board </h2>
 <table>
 <thead>
     <tr>
@@ -39,14 +39,14 @@
       <td><a href="/download_proposal_pdf/{{project_name[i]}}.pdf"><image src="{{url_for('static', filename = 'download_pdf.jpg')}}" height=30></image></a></td>
       <td><a href="
 mailto:{{contact_email[i]}}
-?cc=sarah@oliverwyman.com
+?cc=sarah_raymond@oliverwyman.com
 &subject=Interest in {{vert_horiz[i]}} project for {{level_required[i]}} role starting {{start_date[i]}} for {{duration[i]}}
 &body=
 Hi {{partner_name[i]}}, %0A
 %0A
-My name is consultant_name and I am a consultant_practice consultant_level in the office_name office. %0A
+My name is [Enter your name here] and I am a [Enter your level here] in the [Enter your office here] office. %0A
 %0A
-I read about the {{vert_horiz[i]}} project via the staffing portal and wanted to reach out to express my interest and to learn more. %0A
+I read about the {{vert_horiz[i]}} project via the OW Staff Bot and wanted to reach out to express my interest and to learn more. %0A
 %0A
 Would you be available sometime this week or next to chat further? If so, I will sent up some time on our calendars that works for both of us. %0A
 %0A

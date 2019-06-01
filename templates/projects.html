@@ -1,0 +1,24 @@
+<!doctype html>
+
+<title>Projects</title>
+
+<h1>Projects</h1>
+
+<ol>
+<!-- For loop logic of jinja template -->
+{%for i in range(0, num)%}
+
+    <li> {{partner_name[i]}} |
+        {{practice[i]}} |
+        {{level_required[i]}} |
+        {{office_preference[i]}} |
+        {{type_of_work_1[i]}} |
+        {{type_of_work_2[i]}} |
+        {{start_date[i]}} |
+        {{duration[i]}} |
+        {{attachment[i]}} |
+    </li>
+
+    {%endfor%}
+
+</ol>

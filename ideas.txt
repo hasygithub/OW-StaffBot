@@ -1,5 +1,0 @@
-- web page that shows all the beach requests for that work
-- simple click and email to allow someone to click a post, and it automatically creates a pre-loaded email to the relevant partners
-- partners / principals can simply just email the template and the site gets updated automatically
-- an AI-ish bot that matches beach projects to beach consultants on the Monday / Tuesday and automatically emails them to connect
-

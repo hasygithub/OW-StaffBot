@@ -1,6 +1,8 @@
 from flask import Flask
 import pandas as pd
 
+from csv_functions import add_row_to_projects
+
 from flask import render_template, request
 
 app = Flask(__name__)
@@ -45,12 +47,46 @@ def resources():
 def input_test():
     return render_template('input_test.html')
 
+@app.route('/request_form')
+def request_form():
+    return render_template('request_form.html')
+
 @app.route('/handle_data', methods=['POST'])
 def handle_data():
-    projectpath = request.form['projectFilepath']
-    return projectpath
+    requester_name = request.form['requester_name']
+    vertical = request.form['vertical']
+
+    horizontal = request.form['horizontal']
+    level = request.form['level']
+    office = request.form['office']
+    interest_1 = request.form['interest_1']
+    interest_2 = request.form['interest_2']
+
+    start_date = request.form['start_date']
+    duration = request.form['duration']
+
+    add_row_to_projects(requester_name, '{}-{}'.format(vertical, horizontal), level, office, interest_1, interest_2, start_date, duration, '')
+
+    return 'project submitted :D'
     # your code
     # return a response
+
+
+@app.route('/projects_clean')
+def projects_clean():
+    df = pd.read_csv('projects.csv')
+    return render_template('projects_clean.html',
+                           num=len(list(df['partner_name'])),
+                           partner_name=list(df['partner_name']),
+                           practice=list(df['practice']),
+                           level_required=list(df['level_required']),
+                           office_preference=list(df['office_preference']),
+                           type_of_work_1=list(df['type_of_work_1']),
+                           type_of_work_2=list(df['type_of_work_2']),
+                           start_date=list(df['start_date']),
+                           duration=list(df['duration']),
+                           attachment=list(df['attachment'])
+                           )
 
 
 

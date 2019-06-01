@@ -37,7 +37,7 @@ def auto_email():
 def resource_form():
     return render_template('resource_form.html')
 
-@app.route('/handle_data', methods=['POST'])
+@app.route('/handle_data', methods=['POST', 'GET'])
 def handle_data():
     client = request.form['client']
     project_name = request.form['project_name']
@@ -85,7 +85,7 @@ def handle_data():
     # return a response
 
 
-@app.route('/handle_data_resources', methods=['POST'])
+@app.route('/handle_data_resources', methods=['POST', 'GET'])
 def handle_data_resources():
 
     consultant_name = request.form['consultant_name']

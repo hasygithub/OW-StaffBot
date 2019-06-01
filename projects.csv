@@ -1,10 +1,6 @@
-partner_name,practice,level_required,office_preference,type_of_work_1,type_of_work_2,start_date,duration,attachment
-Kawhi Leonard,CCB,CO,Toronto,test,test,test,test,test
-Steph Curry,LABS,SC,San Francisco,test,test,test,test,test
-Kyle Lowry,TNS,AS,New York,test,test,test,test,test
-Vince Carter,DTA,SC,New York,test,test,test,test,test
-Andrew Wiggins,RCG,CO,Boston,test,test,test,test,test
-Lebron James,TNS,CO,Chicago,test,test,test,test,test
-Hasanain Habib-Nayany,TNS-PSM,Senior Consultant,Toronto,CCAR,Resolution Planning,06/10/19,4 weeks,
-Hasanain Habib-Nayany,TNS-PSM,Senior Consultant,Toronto,CCAR,Resolution Planning,06/10/19,4 weeks,
-Amy Ryu,TNS-Digital,Associate,Boston,Resolution Planning,CCAR,06/17/19,8 weeks,
+client,project_name,vert_horiz,partner_name,type_of_work_1,type_of_work_2,level_required,office_preference,start_date,duration,attachment,contact_email
+National Bank,mortgage modeling,F&R,Kawhi Leonard,slide writing,modeling,CO,Toronto,09/15/19,6 months,attachment.csv,kawhi@raptors.com
+International Postage,flight routing,LABS,Steph Curry,coding,,SC,San Francisco,06/06/19,2 months,attachments2.csv,scurry@gmail.com
+A Bank,resolution planning,TNS-PSM,Hasanain Habib-Nayany,slide writing,slide formatting,SC,Toronto,08/24/19,15 months,attachment3.csv,Hasanain.Habib-Nayany@oliverwyman.com
+B Bank,resolution planning,TNS-PSM,Hasanain Habib-Nayany,slide writing,slide formatting,SC,Toronto,08/24/19,15 months,attachment3.csv,Hasanain.Habib-Nayany@oliverwyman.com
+Boring Company,boring,TNS-Digital,Amy Ryu,analysis,,ASC,Boston,12/23/19,5 months,attachments3.csv,amy.ryu@oliverwyman.com

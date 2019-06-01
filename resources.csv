@@ -1,8 +1,9 @@
-﻿consultant_name,vertical,horizontal,interest_1,interest_2,level,office,start_date,attachments,email_link,contact_email,tm_email
-Kawhi Leonard,CCB,CO,Toronto,test,test,test,test,test,test,kawhi@raptors.com,test
-Steph Curry,LABS,SC,San Francisco,test,test,test,test,test,test,test,test
-Kyle Lowry,TNS,AS,New York,test,test,test,test,test,test,test,test
-Vince Carter,DTA,SC,New York,test,test,test,test,test,test,test,test
-Andrew Wiggins,RCG,CO,Boston,test,test,test,test,test,test,test,test
-Lebron James,TNS,CO,Chicago,test,test,test,test,test,test,test,test
-Pinky and the Brain,1,1,1,1,1,1,1,,,,1
+consultant_name,vert_horiz,interest_1,interest_2,level,office,start_date,attachments,email_link,contact_email,tm_email
+Kawhi Leonard,CCB,Toronto,test,test,test,test,test,test,kawhi@raptors.com,test
+Steph Curry,LABS,San Francisco,test,test,test,test,test,test,test,test
+Kyle Lowry,TNS,New York,test,test,test,test,test,test,test,test
+Vince Carter,DTA,New York,test,test,test,test,test,test,test,test
+Andrew Wiggins,RCG,Boston,test,test,test,test,test,test,test,test
+Lebron James,TNS,Chicago,test,test,test,test,test,test,test,test
+Pinky and the Brain,1,1,1,1,1,1,,,,1
+Hasy ,TNS-PSM,CCAR,Resolution Planning,Senior Consultant,Toronto,06/03/19,,,,Sarah Raymond

@@ -16,16 +16,19 @@ def hello():
 def projects():
     df = pd.read_csv('projects.csv')
     return render_template('projects.html',
-                           num=len(list(df['partner_name'])),
+                           num=len(list(df['client'])),
+                           client=list(df['client']),
+                           project_name=list(df['project_name']),
+                           vert_horiz=list(df['vert_horiz']),
                            partner_name=list(df['partner_name']),
-                           practice=list(df['practice']),
-                           level_required=list(df['level_required']),
-                           office_preference=list(df['office_preference']),
                            type_of_work_1=list(df['type_of_work_1']),
                            type_of_work_2=list(df['type_of_work_2']),
+                           level=list(df['level']),
+                           office_preference=list(df['office_preference']),
                            start_date=list(df['start_date']),
                            duration=list(df['duration']),
-                           attachment=list(df['attachment'])
+                           attachment=list(df['attachment']),
+                           contact_email=list(df['contact_email'])
                            )
 
 @app.route('/resources/')
@@ -82,16 +85,19 @@ def handle_data():
 def projects_clean():
     df = pd.read_csv('projects.csv')
     return render_template('projects_clean.html',
-                           num=len(list(df['partner_name'])),
+                           num=len(list(df['client'])),
+                           client=list(df['client']),
+                           project_name=list(df['project_name']),
+                           vert_horiz=list(df['vert_horiz']),
                            partner_name=list(df['partner_name']),
-                           practice=list(df['practice']),
-                           level_required=list(df['level_required']),
-                           office_preference=list(df['office_preference']),
                            type_of_work_1=list(df['type_of_work_1']),
                            type_of_work_2=list(df['type_of_work_2']),
+                           level=list(df['level']),
+                           office_preference=list(df['office_preference']),
                            start_date=list(df['start_date']),
                            duration=list(df['duration']),
-                           attachment=list(df['attachment'])
+                           attachment=list(df['attachment']),
+                           contact_email=list(df['contact_email'])
                            )
 
 

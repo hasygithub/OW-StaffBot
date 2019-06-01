@@ -7,7 +7,7 @@ import pandas as pd
 from csv_functions import add_row_to_projects, add_row_to_resources
 from match import match_and_email
 
-UPLOAD_FOLDER = 'templates'
+UPLOAD_FOLDER = 'files'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
@@ -177,7 +177,7 @@ def send_email(name=None):
 
 @app.route('/download_pdf/<partner_name>')
 def downloadFile(partner_name=None):
-    path = "templates/{partner_name}.pdf".format(partner_name=partner_name)
+    path = "files/{partner_name}.pdf".format(partner_name=partner_name)
     return send_file(path, as_attachment=True)
 
 def allowed_file(filename):

@@ -59,4 +59,8 @@ def handle_data():
 def template_test(name=None):
     return render_template('hello.html', name=name)
 
+@app.route('/send_email/')
+def send_email(name=None):
+    return render_template('send_email.html', name=name)
+
 

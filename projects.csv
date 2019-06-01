@@ -1,4 +1,4 @@
-client,project_name,vert_horiz,partner_name,type_of_work_1,type_of_work_2,level,office_preference,start_date,duration,attachment,contact_email
+client,project_name,vert_horiz,partner_name,type_of_work_1,type_of_work_2,level_required,office_preference,start_date,duration,attachment,contact_email
 National Bank,mortgage modeling,F&R,Kawhi Leonard,slide writing,modeling,CO,Toronto,09/15/19,6 months,attachment.csv,kawhi@raptors.com
 International Postage,flight routing,LABS,Steph Curry,coding,,SC,San Francisco,06/06/19,2 months,attachments2.csv,scurry@gmail.com
 A Bank,resolution planning,TNS-PSM,Hasanain Habib-Nayany,slide writing,slide formatting,SC,Toronto,08/24/19,15 months,attachment3.csv,Hasanain.Habib-Nayany@oliverwyman.com

@@ -17,7 +17,6 @@ def match_and_email(test_email):
 
     for i in range(0, len(cross_join)):
         if cross_join.loc[i, 'match'] == 1.0:
-            #TODO Change these back to the emails
             # partner_email = cross_join.loc[i, 'partner_name']
             # consultant_email = cross_join.loc[i, 'consultant_name']
             partner_email = 'kei.nishimuragasparian@gmail.com'
@@ -38,8 +37,6 @@ def match_and_email(test_email):
             server = smtplib.SMTP('smtp.gmail.com:587')
             server.starttls()
             server.ehlo()
-            #TODO make a better email address
-            #TODO host server
             server.login('staff.bot.ow@gmail.com', 'Pyspark4lyfe22')
             server.sendmail('Project Radar', [test_email,consultant_email], "Hi " + consultant_name + ",\n" \
             "It's a match for " + partner_name + " and " + consultant_name + " for " + project + "." \
@@ -56,8 +53,6 @@ def match_and_email(test_email):
             server = smtplib.SMTP('smtp.gmail.com:587')
             server.starttls()
             server.ehlo()
-            #TODO make a better email address
-            #TODO host server
             server.login('staff.bot.ow@gmail.com', 'Pyspark4lyfe22')
             server.sendmail('Project Radar', [test_email,partner_email], "Hi " + partner_name + ",\n" \
             "It's a match for " + partner_name + " and " + consultant_name + " for " + project + "." \

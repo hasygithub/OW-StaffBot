@@ -17,10 +17,6 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def hello():
     return render_template('main_page.html', project=None, resource=None)
 
-@app.route('/input_test')
-def input_test():
-    return render_template('input_test.html')
-
 @app.route('/project_form')
 def request_form():
     return render_template('request_form.html')
@@ -43,9 +39,6 @@ def resource_form():
 
 @app.route('/handle_data', methods=['POST'])
 def handle_data():
-
-    print ('test')
-
     client = request.form['client']
     project_name = request.form['project_name']
     vertical = request.form['vertical']
@@ -106,10 +99,6 @@ def handle_data_resources():
     start_date = request.form['start_date']
     TM = request.form['TM']
 
-    # check if the post request has the file part
-    #if 'file' not in request.files:
-        #flash('No file part')
-        #return redirect(request.url)
     if 'file' in request.files:
         file = request.files['file']
         # if user does not select file, browser also
@@ -125,11 +114,6 @@ def handle_data_resources():
     add_row_to_resources(consultant_name, vertical, horizontal, interest_1, interest_2, level, office, start_date, '', '', consultant_email, TM)
 
     return render_template('main_page.html', project=None, resource=True)
-
-    # return 'resource submitted :D'
-    # your code
-    # return a response
-
 
 @app.route('/project_board')
 def projects_clean():

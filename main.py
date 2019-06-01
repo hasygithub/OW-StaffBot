@@ -207,7 +207,7 @@ def send_email(name=None):
 
 @app.route('/download_proposal_pdf/<partner_name>')
 def downloadproposalFile(partner_name=None):
-    path = "files/{partner_name}_proposal.pdf".format(partner_name=partner_name)
+    path = "files/{partner_name}".format(partner_name=partner_name)
     return send_file(path, as_attachment=True)
 
 @app.route('/download_resume_pdf/<consultant_name>')

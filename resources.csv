@@ -1,5 +1,5 @@
-consultant_name,vertical,horizontal,interest_1,interest_2,level,office,start_date,attachments,email_link,contact_email,tm_email
-Kawhi Leonard,CCB,CO,Toronto,test,test,test,test,test,test,test,test
+﻿consultant_name,vertical,horizontal,interest_1,interest_2,level,office,start_date,attachments,email_link,contact_email,tm_email
+Kawhi Leonard,CCB,CO,Toronto,test,test,test,test,test,test,kawhi@raptors.com,test
 Steph Curry,LABS,SC,San Francisco,test,test,test,test,test,test,test,test
 Kyle Lowry,TNS,AS,New York,test,test,test,test,test,test,test,test
 Vince Carter,DTA,SC,New York,test,test,test,test,test,test,test,test

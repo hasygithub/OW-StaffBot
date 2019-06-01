@@ -15,7 +15,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/')
 def hello():
-    return 'Hello, World!'
+    return render_template('main_page.html')
 
 @app.route('/projects/')
 def projects():

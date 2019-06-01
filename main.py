@@ -17,7 +17,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def hello():
     return render_template('main_page.html', project=None, resource=None)
 
-@app.route('/projects/')
+@app.route('/projects_test')
 def projects():
     df = pd.read_csv('projects.csv')
     return render_template('projects.html',
@@ -36,7 +36,7 @@ def projects():
                            contact_email=list(df['contact_email'])
                            )
 
-@app.route('/resources/')
+@app.route('/resources_test')
 def resources():
     df = pd.read_csv('resources.csv')
     return render_template('resources.html',
@@ -55,7 +55,7 @@ def resources():
 def input_test():
     return render_template('input_test.html')
 
-@app.route('/request_form')
+@app.route('/project_form')
 def request_form():
     return render_template('request_form.html')
 
@@ -160,7 +160,7 @@ def handle_data_resources():
     # return a response
 
 
-@app.route('/projects_clean')
+@app.route('/project_board')
 def projects_clean():
     df = pd.read_csv('projects.csv')
     return render_template('projects_clean.html',
@@ -181,7 +181,7 @@ def projects_clean():
 
 
 
-@app.route('/resources_clean')
+@app.route('/resource_board')
 def resources_clean():
     df = pd.read_csv('resources.csv')
     return render_template('resources_clean.html',

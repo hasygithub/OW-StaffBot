@@ -49,8 +49,7 @@ def add_row_to_resources(consultant_name,
     df = pd.read_csv('resources.csv')
 
     row = [consultant_name,
-                         vertical,
-                         horizontal,
+                         '{}-{}'.format(vertical, horizontal),
                          interest_1,
                          interest_2,
                          level,

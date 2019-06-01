@@ -5,7 +5,7 @@
 </head>
 <body>
 <div><a href="/"><image src="{{url_for('static', filename = 'staffbot_logo.png')}}" alt = "centered image" width="200px" id="logo"></image></a></div>
-<h2> Staffing resources </h2>
+<h2> Resource Board </h2>
 <table>
   <thead>
     <tr>
@@ -38,14 +38,14 @@ mailto:{{contact_email[i]}}
 &body=
 Hi {{consultant_name[i]}}, %0A
 %0A
-My name is PARTNER and I am a ____ ____ in the ____ office. %0A
+My name is [Enter your name here] and I am currently staffing for the [Enter project nane here] project. %0A
 %0A
 I see that you're up for staffing starting on {{start_date[i]}} via the staffing portal and wanted to guage your interest on my project. %0A
 %0A
 Would you be available sometime this week or next to chat further? If so, I will sent up some time on our calendars that works for both of us. %0A
 %0A
 Thanks, %0A
-PARTNER_NAME
+[Enter your name here]
 "><button>Contact consultant</button></a>
     </tr>
 

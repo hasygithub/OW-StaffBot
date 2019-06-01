@@ -15,7 +15,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/')
 def hello():
-    return render_template('main_page.html')
+    return render_template('main_page.html', project=None, resource=None)
 
 @app.route('/projects/')
 def projects():
@@ -116,7 +116,8 @@ def handle_data():
                         attachment,
                         contact_email)
 
-    return 'project submitted :D'
+    return render_template('main_page.html', project=True, resource=None)
+    #return 'project submitted :D'
     # your code
     # return a response
 
@@ -125,6 +126,7 @@ def handle_data():
 def handle_data_resources():
 
     consultant_name = request.form['consultant_name']
+    consultant_email = request.form['consultant_email']
     vertical = request.form['vertical']
     horizontal = request.form['horizontal']
     level = request.form['level']
@@ -149,9 +151,11 @@ def handle_data_resources():
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         #return redirect(url_for('uploaded_file', filename=filename))
 
-    add_row_to_resources(consultant_name, vertical, horizontal, interest_1, interest_2, level, office, start_date, '', '', '', TM)
+    add_row_to_resources(consultant_name, vertical, horizontal, interest_1, interest_2, level, office, start_date, '', '', consultant_email, TM)
 
-    return 'resource submitted :D'
+    return render_template('main_page.html', project=None, resource=True)
+
+    # return 'resource submitted :D'
     # your code
     # return a response
 
@@ -212,7 +216,7 @@ def downloadproposalFile(partner_name=None):
 
 @app.route('/download_resume_pdf/<consultant_name>')
 def downloadresumeFile(consultant_name=None):
-    path = "files/{consultant_name}_resume.pdf".format(consultant_name=consultant_name)
+    path = "files/{consultant_name}".format(consultant_name=consultant_name)
     return send_file(path, as_attachment=True)
 
 def allowed_file(filename):

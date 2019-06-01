@@ -1,0 +1,13 @@
+<!doctype html>
+
+<title>Hello from Flask</title>
+
+<ol>
+<!-- For loop logic of jinja template -->
+{%for i in range(0, num)%}
+
+    <li> {{request_id[i]}} | {{partner_name[i]}} | {{request_description[i]}} | {{days_required[i]}}</li>
+
+    {%endfor%}
+
+</ol>

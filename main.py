@@ -104,7 +104,8 @@ def handle_data_resources():
         # if user does not select file, browser also
         # submit a empty part without filename
         if file.filename == '':
-            flash('No selected file')
+            print ('flash')
+            # flash('No selected file')
             #return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(consultant_name+'.pdf')
@@ -184,13 +185,15 @@ def upload_file(name=None):
         # check if the post request has the file part
         if 'file' in request.files:
             if 'file' not in request.files:
-                flash('No file part')
+                print ('flash')
+                # flash('No file part')
                 #return redirect(request.url)
             file = request.files['file']
             # if user does not select file, browser also
             # submit a empty part without filename
             if file.filename == '':
-                flash('No selected file')
+                print ('flash')
+                # flash('No selected file')
                 #return redirect(request.url)
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)

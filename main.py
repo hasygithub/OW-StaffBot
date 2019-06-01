@@ -17,40 +17,6 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def hello():
     return render_template('main_page.html', project=None, resource=None)
 
-@app.route('/projects_test')
-def projects():
-    df = pd.read_csv('projects.csv')
-    return render_template('projects.html',
-                           num=len(list(df['client'])),
-                           client=list(df['client']),
-                           project_name=list(df['project_name']),
-                           vert_horiz=list(df['vert_horiz']),
-                           partner_name=list(df['partner_name']),
-                           type_of_work_1=list(df['type_of_work_1']),
-                           type_of_work_2=list(df['type_of_work_2']),
-                           level=list(df['level_required']),
-                           office_preference=list(df['office_preference']),
-                           start_date=list(df['start_date']),
-                           duration=list(df['duration']),
-                           attachment=list(df['attachment']),
-                           contact_email=list(df['contact_email'])
-                           )
-
-@app.route('/resources_test')
-def resources():
-    df = pd.read_csv('resources.csv')
-    return render_template('resources.html',
-                           num=len(list(df['consultant_name'])),
-                           consultant_name=list(df['consultant_name']),
-                           practice=list(df['practice']),
-                           level=list(df['level']),
-                           office=list(df['office']),
-                           interest_1=list(df['interest_1']),
-                           interest_2=list(df['interest_2']),
-                           start_date=list(df['start_date']),
-                           one_pager=list(df['one_pager'])
-                           )
-
 @app.route('/input_test')
 def input_test():
     return render_template('input_test.html')

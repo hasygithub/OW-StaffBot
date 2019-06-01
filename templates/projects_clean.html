@@ -1,0 +1,59 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='projects_clean.css') }}">
+</head>
+<body>
+<h2> Project requests </h2>
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Project Name</th>
+      <th>Practice</th>
+      <th>Level Required</th>
+      <th>Office Preference</th>
+      <th>Type of Work</th>
+      <th>Start Date</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {%for i in range(0, num)%}
+
+    <tr>
+      <td><strong>{{partner_name[i]}}</strong></td>
+      <td>{{practice[i]}}</td>
+      <td>Digital</td>
+      <td>{{level_required[i]}}</td>
+      <td>{{office_preference[i]}} </td>
+      <td>{{type_of_work_1[i]}} | {{type_of_work_2[i]}}</td>
+      <td>{{start_date[i]}}</td>
+      <td>{{duration[i]}}</td>
+      <td><image src="http://www.ultimatecomputerclassses.com/assets/images/microsoft_powerpoint_2013_logosvg.png" height=20></image></td>
+      <td><a href="
+mailto:{{partner_name[i]}}@oliverwyman.com
+?cc=sarah@oliverwyman.com
+&subject=Interest in {{practice[i]}} project for {{level_required[i]}} role starting {{start_date[i]}} for {{duration[i]}}
+&body=
+Hi {{partner_name[i]}}, %0A
+%0A
+My name is consultant_name and I am a consultant_practice consultant_level in the office_name office. %0A
+%0A
+I read about the {{practice[i]}} project via the staffing portal and wanted to reach out to express my interest and to learn more. %0A
+%0A
+Would you be available sometime this week or next to chat further? If so, I will sent up some time on our calendars that works for both of us. %0A
+%0A
+Thanks, %0A
+{{consultant_name}}
+">Contact project</a>
+    </tr>
+
+    {%endfor%}
+
+  </tbody>
+</table>
+</body>
+</html>

@@ -24,4 +24,4 @@ def add_row_to_projects(partner_name,
 
     df_row = pd.DataFrame(data=[row], columns=df.columns)
     df_complete = df.append(df_row)
-    df_complete.to_csv('projects.csv')
+    df_complete.to_csv('projects.csv', index=False)

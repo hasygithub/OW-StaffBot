@@ -17,53 +17,25 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def hello():
     return render_template('main_page.html', project=None, resource=None)
 
-@app.route('/projects/')
-def projects():
-    df = pd.read_csv('projects.csv')
-    return render_template('projects.html',
-                           num=len(list(df['client'])),
-                           client=list(df['client']),
-                           project_name=list(df['project_name']),
-                           vert_horiz=list(df['vert_horiz']),
-                           partner_name=list(df['partner_name']),
-                           type_of_work_1=list(df['type_of_work_1']),
-                           type_of_work_2=list(df['type_of_work_2']),
-                           level=list(df['level_required']),
-                           office_preference=list(df['office_preference']),
-                           start_date=list(df['start_date']),
-                           duration=list(df['duration']),
-                           attachment=list(df['attachment']),
-                           contact_email=list(df['contact_email'])
-                           )
-
-@app.route('/resources/')
-def resources():
-    df = pd.read_csv('resources.csv')
-    return render_template('resources.html',
-                           num=len(list(df['consultant_name'])),
-                           consultant_name=list(df['consultant_name']),
-                           practice=list(df['practice']),
-                           level=list(df['level']),
-                           office=list(df['office']),
-                           interest_1=list(df['interest_1']),
-                           interest_2=list(df['interest_2']),
-                           start_date=list(df['start_date']),
-                           one_pager=list(df['one_pager'])
-                           )
-
 @app.route('/input_test')
 def input_test():
     return render_template('input_test.html')
 
-@app.route('/request_form')
+@app.route('/project_form')
 def request_form():
     return render_template('request_form.html')
 
-@app.route('/auto_email')
-def auto_email():
-    match_and_email()
+@app.route('/test_email')
+def test_email():
+    return render_template('test_email.html')
 
-    return 'Email sent!'
+@app.route('/auto_email', methods=['POST'])
+def auto_email():
+
+    test_email = request.form['test_email']
+    match_and_email(test_email)
+
+    return render_template('test_email_final.html')
 
 @app.route('/resource_form')
 def resource_form():
@@ -159,7 +131,7 @@ def handle_data_resources():
     # return a response
 
 
-@app.route('/projects_clean')
+@app.route('/project_board')
 def projects_clean():
     df = pd.read_csv('projects.csv')
     return render_template('projects_clean.html',
@@ -180,7 +152,7 @@ def projects_clean():
 
 
 
-@app.route('/resources_clean')
+@app.route('/resource_board')
 def resources_clean():
     df = pd.read_csv('resources.csv')
     return render_template('resources_clean.html',

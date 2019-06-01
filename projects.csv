@@ -1,6 +1,10 @@
-client,project_name,vert_horiz,partner_name,type_of_work_1,type_of_work_2,level_required,office_preference,start_date,duration,attachment,contact_email
-National Bank,mortgage modeling,F&R,Kawhi Leonard,slide writing,modeling,CO,Toronto,09/15/19,6 months,attachment.csv,kawhi@raptors.com
-International Postage,flight routing,LABS,Steph Curry,coding,,SC,San Francisco,06/06/19,2 months,attachments2.csv,scurry@gmail.com
-A Bank,resolution planning,TNS-PSM,Hasanain Habib-Nayany,slide writing,slide formatting,SC,Toronto,08/24/19,15 months,attachment3.csv,Hasanain.Habib-Nayany@oliverwyman.com
-B Bank,resolution planning,TNS-PSM,Hasanain Habib-Nayany,slide writing,slide formatting,SC,Toronto,08/24/19,15 months,attachment3.csv,Hasanain.Habib-Nayany@oliverwyman.com
-Boring Company,boring,TNS-Digital,Amy Ryu,analysis,,ASC,Boston,12/23/19,5 months,attachments3.csv,amy.ryu@oliverwyman.com
+client,project_name,vert_horz,partner_name,type_of_work_1,type_of_work_2,level_required,office_preference,start_date,duration,attachment,contact_email
+National Bank,Mortgage Modeling,Risk_Digital,Dan Cope,Modeling,Forecasting,Associate,Toronto,6/10/2019,6 months,test,test@oliverwyman.com
+International Postage,Shipping Effectiveness,TNS_Operations,John Seeliger,Business Assessment,Process Design,Senior Consultant,Atlanta,6/10/2019,2 months,test,test@oliverwyman.com
+Major Airline,Route Planning,TNS_Operations,Andrew Medland,Analytics,Modeling,Senior Consultant,Dallas,6/3/2019,8 months,test,test@oliverwyman.com
+Grocery Retailer,Pricing,RCG_PSM,Nick Harrison,Process Design,Analytics,Senior Consultant,Boston,6/3/2019,8 weeks,test,test@oliverwyman.com
+Regional Manufacturer,Sourcing,Business Services_Operations,Karina Swette,Business Assessment,Process Design,Senior Consultant,Florida,6/3/2019,6 months,test,test@oliverwyman.com
+Regional Bank,Customer Journey,FS_Strategy,Alina Lantsberg,Business Assessment,Process Design,Consultant,San Francisco,6/3/2019,4 weeks,test,test@oliverwyman.com
+Wealth Asset Management,Organizational Effectiveness,FS_Operations,Ugur Koyluoglu,PMO,Client Management,Consultant,New York,6/17/2019,4 weeks,test,test@oliverwyman.com
+Global Bank,Risk Modeling,Risk_Digital,Inderpreet Batra,Modeling,Forecasting,Consultant,New York,6/17/2019,4 months,test,test@oliverwyman.com
+Food Services,Salesforce Effectiveness,Business Services_Strategy,Damien Calderini,Staff Augmentation,Process Design,Associate,DC,6/17/2019,8 weeks,test,test@oliverwyman.com
